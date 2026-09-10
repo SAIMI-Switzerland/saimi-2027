@@ -1,0 +1,201 @@
+---
+/* -----------------------------------------------------------------------------
+ * SAIMI edition page — generated from src/edition.ts
+ *
+ * You should not normally need to edit this file. Put edition content in
+ * src/edition.ts; sections with no content are skipped automatically.
+ * -------------------------------------------------------------------------- */
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Steps3 from '~/components/widgets/Steps3.astro';
+import Content2 from '~/components/widgets/Content2.astro';
+import Content4 from '~/components/widgets/Content4.astro';
+import Content5 from '~/components/widgets/Content5.astro';
+import Content6 from '~/components/widgets/Content6.astro';
+import Content7 from '~/components/widgets/Content7.astro';
+
+import { edition } from '~/edition';
+
+const metadata = {
+  title: `SAIMI ${edition.year} — Symposium on Artificial Intelligence in Medical Imaging`,
+  ignoreTitleTemplate: true,
+};
+
+const personIcon = '~/assets/images/person_icon.png';
+const withImage = (p) => ({ ...p, image: { src: p.image ?? personIcon, alt: p.name } });
+
+const heroActions = [
+  ...(edition.hero.primaryAction
+    ? [{ variant: 'primary', target: '_blank', ...edition.hero.primaryAction }]
+    : []),
+  { text: 'Contact us', href: '/#contact' },
+];
+
+const cfa = edition.callForAbstracts;
+const cfaSections = cfa
+  ? [
+      { subtitle: 'Scope', text: cfa.scopeIntro, bullets: cfa.topics },
+      { subtitle: '', text: cfa.policy },
+      { subtitle: 'Submission Format', text: cfa.submissionFormat },
+      {
+        subtitle: 'How to submit?',
+        text: cfa.submissionClosed
+          ? `<strong>Abstract submission for SAIMI ${edition.year} is closed.</strong>` +
+            (cfa.submissionUrl
+              ? ` Submissions were handled via <a href="${cfa.submissionUrl}" target="_blank" rel="noopener noreferrer" class="text-primary underline">Microsoft CMT</a>.`
+              : '')
+          : cfa.submissionUrl
+            ? `Please click <a href="${cfa.submissionUrl}" target="_blank" rel="noopener noreferrer" class="text-primary underline">here</a> to submit an abstract. The submission deadline is ${cfa.submissionDeadline}. The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.`
+            : `The submission link will be published here. The submission deadline is ${cfa.submissionDeadline}.`,
+      },
+      { subtitle: 'Presentation', text: cfa.presentation },
+    ]
+  : [];
+
+const programSections = [
+  ...(edition.program.bookletUrl
+    ? [
+        {
+          id: 'program-booklet',
+          subtitle: '',
+          text: edition.program.bookletText,
+          callToAction: {
+            text: 'Download Program',
+            href: edition.program.bookletUrl,
+            variant: 'primary',
+            icon: 'tabler:download',
+            target: '_blank',
+          },
+        },
+      ]
+    : []),
+  { id: 'date-location', subtitle: 'Date and Location', text: edition.venue },
+  ...(edition.program.schedule.length
+    ? [{ id: 'schedule', subtitle: 'Schedule', bullets: edition.program.schedule }]
+    : []),
+  ...(edition.program.keynotes.length
+    ? [
+        {
+          type: 'people',
+          id: 'keynote',
+          subtitle: 'Keynotes',
+          people: edition.program.keynotes.map(withImage),
+        },
+      ]
+    : []),
+];
+
+const sponsorRows = edition.sponsors.filter((row) => row.images?.length);
+const blueBg = '<div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>';
+---
+
+<Layout metadata={metadata}>
+  <Hero actions={heroActions} image={{ src: edition.hero.image, alt: edition.hero.imageAlt }}>
+    <Fragment slot="title">
+      Symposium on Artificial Intelligence in Medical Imaging
+      <span class="text-accent dark:text-white"> SAIMI</span>
+    </Fragment>
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        Organised by researchers from multiple Swiss universities.<br /><br />
+        <span class="font-semibold">{edition.date} in {edition.city}</span>
+      </span>
+    </Fragment>
+  </Hero>
+
+  <Content2
+    title='About <span class="text-accent dark:text-white"> SAIMI</span>'
+    id="about"
+    sections={[
+      { subtitle: 'Overview', text: edition.about.overview },
+      { subtitle: 'Format', text: edition.about.format },
+    ]}
+  />
+
+  {
+    edition.importantDates.length > 0 && (
+      <Steps3
+        title="Important Dates"
+        id="importantdates"
+        items={edition.importantDates.map((d, i) => ({
+          title: `${d.date}: <span class="font-medium">${d.label}</span>`,
+          description: '',
+          icon: `tabler:number-${i + 1}`,
+        }))}
+      >
+        <Fragment slot="bg" set:html={blueBg} />
+      </Steps3>
+    )
+  }
+
+  {cfa && <Content2 title="Call for Abstracts" id="call" sections={cfaSections} />}
+
+  <Content5 title="Program" id="program" sections={programSections}>
+    <Fragment slot="bg" set:html={blueBg} />
+  </Content5>
+
+  <Content2
+    title="Attend"
+    id="attend"
+    sections={[
+      { subtitle: 'Registration', text: edition.attend.registration },
+      { subtitle: 'Prices', text: edition.attend.prices },
+    ]}
+  />
+
+  {
+    edition.organisingCommittee.length > 0 && (
+      <Content4
+        title="Organising Committee"
+        id="oc"
+        sections={edition.organisingCommittee.map(withImage)}
+      >
+        <Fragment slot="bg" set:html={blueBg} />
+      </Content4>
+    )
+  }
+
+  {
+    edition.steeringCommittee.length > 0 && (
+      <Content4 title="Steering Committee" id="sc" sections={edition.steeringCommittee.map(withImage)}>
+        <Fragment slot="bg" set:html={blueBg} />
+      </Content4>
+    )
+  }
+
+  {
+    edition.localSupportTeam.length > 0 && (
+      <Content7
+        title="Local Support Team"
+        id="lt"
+        sections={edition.localSupportTeam.map((p) => ({ name: p.name }))}
+      >
+        <Fragment slot="bg" set:html={blueBg} />
+      </Content7>
+    )
+  }
+
+  {
+    edition.galleryUrl && (
+      <Content2
+        title="Our Gallery"
+        id="gallery"
+        sections={[
+          {
+            subtitle: '',
+            text: `Please click <a href="${edition.galleryUrl}" target="_blank" rel="noopener noreferrer" class="text-primary underline">here</a> to view all photos from the event.`,
+          },
+        ]}
+      />
+    )
+  }
+
+  <Content2
+    title="Contact"
+    id="contact"
+    sections={[{ subtitle: edition.contact.heading, text: edition.contact.email }]}
+  />
+
+  {sponsorRows.length > 0 && <Content6 title="" id="sponsors" sections={sponsorRows} />}
+</Layout>
