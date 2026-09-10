@@ -44,5 +44,5 @@ pnpm build
    (`public/CNAME` is already in place.)
 3. DNS for `saimi.ch`: add `CNAME 2027 → saimi-switzerland.github.io`.
 
-See `DEPLOYMENT.md` at the top of the `websites` folder for the full sequence
+See `DEPLOYMENT.md` in the parent `SAIMI` folder for the full sequence
 across all SAIMI sites.
