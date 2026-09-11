@@ -70,8 +70,10 @@ export const edition = {
 
   /* ── Hero ──────────────────────────────────────────────────────────────── */
   hero: {
-    image: '~/assets/images/medicalimages.jpg',
-    imageAlt: 'Medical images',
+    // The banner for this edition. Each edition uses its own; drop the image in
+    // src/assets/images/ and point at it here.
+    image: '~/assets/images/banner.png',
+    imageAlt: 'Chapel Bridge and Water Tower in Lucerne blended with brain MRI slices',
     /** Optional extra button, e.g. the program booklet. Set to null to hide. */
     primaryAction: null as { text: string; href: string; icon?: string } | null,
     // primaryAction: { text: 'Download Program', href: '/files/program_2027.pdf', icon: 'tabler:download' },

@@ -18,9 +18,9 @@ metadata:
   openGraph:
     site_name: SAIMI 2027
     images:
-      - url: '~/assets/images/medicalimages.jpg'
+      - url: '~/assets/images/banner.png'
         width: 1200
-        height: 628
+        height: 675
     type: website
   twitter:
     cardType: summary_large_image
