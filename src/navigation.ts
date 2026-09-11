@@ -22,7 +22,7 @@ const peopleLinks = [
   ...(edition.organisingCommittee.length
     ? [{ text: 'Organising Committee', href: getPermalink('/#oc') }]
     : []),
-  ...(edition.steeringCommittee.length
+  ...(edition.steeringCommitteeUrl
     ? [{ text: 'Steering Committee', href: getPermalink('/#sc') }]
     : []),
   ...(edition.localSupportTeam.length

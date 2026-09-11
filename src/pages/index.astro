@@ -157,10 +157,19 @@ const blueBg = '<div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></d
   }
 
   {
-    edition.steeringCommittee.length > 0 && (
-      <Content4 title="Steering Committee" id="sc" sections={edition.steeringCommittee.map(withImage)}>
+    edition.steeringCommitteeUrl && (
+      <Content2
+        title="Steering Committee"
+        id="sc"
+        sections={[
+          {
+            subtitle: '',
+            text: `SAIMI is overseen by a permanent steering committee, which is the same across editions. Its current members are listed on <a href="${edition.steeringCommitteeUrl}" class="text-primary underline">saimi.ch</a>.`,
+          },
+        ]}
+      >
         <Fragment slot="bg" set:html={blueBg} />
-      </Content4>
+      </Content2>
     )
   }
 

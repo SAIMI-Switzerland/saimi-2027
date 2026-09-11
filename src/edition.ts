@@ -162,34 +162,10 @@ export const edition = {
   ] as Person[],
 
   /**
-   * The permanent SAIMI steering committee. Check saimi.ch for the current
-   * membership before each edition and copy it here.
+   * The permanent steering committee is listed once, on the hub, so edition
+   * sites link to it rather than repeating it. Set to null to drop the section.
    */
-  steeringCommittee: [
-    {
-      name: 'Christian F. Baumgartner',
-      role: 'University of Lucerne, Switzerland',
-      image: '~/assets/images/christian.jpg',
-    },
-    {
-      name: 'Meritxell Bach Cuadra',
-      role: 'CIBM Center for Biomedical Imaging, Lausanne University (UNIL), Radiology Department (CHUV)',
-      image: '~/assets/images/meritxell.jpeg',
-    },
-    {
-      name: 'Ece Özkan Elsen',
-      role: 'University of Basel, Switzerland',
-      image: '~/assets/images/ece.jpeg',
-    },
-    { name: 'Lisa M. Koch', role: 'University of Bern, Switzerland', image: '~/assets/images/lisa.png' },
-    { name: 'Ender Konukoglu', role: 'ETH Zürich, Switzerland', image: '~/assets/images/ender.jpg' },
-    { name: 'Henning Müller', role: 'HES-SO Valais, Switzerland', image: '~/assets/images/henning.jpg' },
-    {
-      name: 'Mauricio Reyes',
-      role: 'University of Bern, Switzerland',
-      image: '~/assets/images/mauricio.jpg',
-    },
-  ] as Person[],
+  steeringCommitteeUrl: 'https://saimi.ch/#sc' as string | null,
 
   /** Helpers on the day, names only. */
   localSupportTeam: [] as Person[],
