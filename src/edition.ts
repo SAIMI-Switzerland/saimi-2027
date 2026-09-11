@@ -166,16 +166,29 @@ export const edition = {
    * membership before each edition and copy it here.
    */
   steeringCommittee: [
-    { name: 'Christian F. Baumgartner', role: 'University of Lucerne, Switzerland' },
+    {
+      name: 'Christian F. Baumgartner',
+      role: 'University of Lucerne, Switzerland',
+      image: '~/assets/images/christian.jpg',
+    },
     {
       name: 'Meritxell Bach Cuadra',
       role: 'CIBM Center for Biomedical Imaging, Lausanne University (UNIL), Radiology Department (CHUV)',
+      image: '~/assets/images/meritxell.jpeg',
     },
-    { name: 'Ece Özkan Elsen', role: 'University of Basel, Switzerland' },
-    { name: 'Lisa M. Koch', role: 'University of Bern, Switzerland' },
-    { name: 'Ender Konukoglu', role: 'ETH Zürich, Switzerland' },
-    { name: 'Henning Müller', role: 'HES-SO Valais, Switzerland' },
-    { name: 'Mauricio Reyes', role: 'University of Bern, Switzerland' },
+    {
+      name: 'Ece Özkan Elsen',
+      role: 'University of Basel, Switzerland',
+      image: '~/assets/images/ece.jpeg',
+    },
+    { name: 'Lisa M. Koch', role: 'University of Bern, Switzerland', image: '~/assets/images/lisa.png' },
+    { name: 'Ender Konukoglu', role: 'ETH Zürich, Switzerland', image: '~/assets/images/ender.jpg' },
+    { name: 'Henning Müller', role: 'HES-SO Valais, Switzerland', image: '~/assets/images/henning.jpg' },
+    {
+      name: 'Mauricio Reyes',
+      role: 'University of Bern, Switzerland',
+      image: '~/assets/images/mauricio.jpg',
+    },
   ] as Person[],
 
   /** Helpers on the day, names only. */
