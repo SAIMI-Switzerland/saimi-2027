@@ -10,8 +10,8 @@ site:
 metadata:
   title:
     default: SAIMI 2027
-    template: '%s — SAIMI 2027'
-  description: "SAIMI 2027 — Symposium on Artificial Intelligence in Medical Imaging, 6 July 2027, University of Lucerne."
+    template: '%s | SAIMI 2027'
+  description: "SAIMI 2027: Symposium on Artificial Intelligence in Medical Imaging, 6 July 2027, University of Lucerne."
   robots:
     index: true
     follow: true

@@ -1,5 +1,5 @@
 /* =============================================================================
- * SAIMI edition configuration — THE ONLY FILE YOU NORMALLY NEED TO EDIT
+ * SAIMI edition configuration, THE ONLY FILE YOU NORMALLY NEED TO EDIT
  * =============================================================================
  *
  * Everything year-specific for one SAIMI edition lives here. The page layout in
@@ -13,7 +13,7 @@
  *     path string; sponsor logos must be `import`ed at the top of this file
  *     (the sponsor widget needs the image object to size SVGs correctly).
  *   - Files for download go in public/files/ and MUST be year-stamped, e.g.
- *     `program_2027.pdf` — never `program.pdf`.
+ *     `program_2027.pdf`, never `program.pdf`.
  *   - Also update `src/config.yaml` once: `site.site`, `metadata.title` and
  *     `metadata.description`.
  * ---------------------------------------------------------------------------- */
@@ -31,7 +31,7 @@ export interface Person {
   name: string;
   /** Affiliation for committee members, or a full bio for keynote speakers. */
   role?: string;
-  /** e.g. '~/assets/images/jane.jpg' — omit to fall back to a generic icon. */
+  /** e.g. '~/assets/images/jane.jpg', omit to fall back to a generic icon. */
   image?: string;
 }
 
@@ -141,7 +141,7 @@ export const edition = {
       'A detailed program is available for download, including time slots for all keynotes and lightning talks, assigned poster sessions for all accepted abstracts and further details about the panel discussion.',
     /** Empty array hides the schedule. */
     schedule: [] as string[],
-    // schedule: ['08:30–09:15 Registration', '09:15–09:30 Welcome Words', ...],
+    // schedule: ['08:30-09:15 Registration', '09:15-09:30 Welcome Words', ...],
     /** Keynote speakers. `role` holds the full bio. */
     keynotes: [] as Person[],
   },
@@ -178,7 +178,7 @@ export const edition = {
     { name: 'Mauricio Reyes', role: 'University of Bern, Switzerland' },
   ] as Person[],
 
-  /** Helpers on the day — names only. */
+  /** Helpers on the day, names only. */
   localSupportTeam: [] as Person[],
 
   /* ── Gallery ───────────────────────────────────────────────────────────── */

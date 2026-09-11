@@ -1,5 +1,5 @@
 /* -----------------------------------------------------------------------------
- * Header menu and footer — generated from src/edition.ts.
+ * Header menu and footer, generated from src/edition.ts.
  * Menu entries whose section has no content are dropped automatically.
  * -------------------------------------------------------------------------- */
 import { getPermalink } from './utils/permalinks';
