@@ -21,7 +21,7 @@ Everything below lives in **`src/edition.ts`**; search for `TODO`.
       overlapping with the 2026 team
 - [ ] Local support team (`localSupportTeam`)
 - [ ] Registration text and link once registration opens
-- [ ] Contact address (`contact.email`), prefer a role address
+- [x] Contact address (`contact.email`), set to the role address info@saimi.ch
 - [ ] Sponsors and collaboration logos (`sponsors`); logos go in `src/assets/images/`
 - [ ] Program booklet → `public/files/program_2027.pdf`, then set `program.bookletUrl`
 - [ ] After the event: photo album link (`galleryUrl`), then freeze the repo

@@ -177,9 +177,11 @@ export const edition = {
   /* ── Contact ───────────────────────────────────────────────────────────── */
   contact: {
     heading: 'Are you interested in sponsoring our event? Any questions? Please feel free to reach out!',
-    /** Prefer a role address over a personal one where possible. */
-    // TODO: replace with the 2027 organising committee's contact address.
-    email: 'Contact details for SAIMI 2027 will be published here shortly. In the meantime see <a href="https://saimi.ch" class="text-primary underline">saimi.ch</a>.',
+    /**
+     * The SAIMI role address. Replace with the organising committee's own
+     * address if this edition would rather handle enquiries directly.
+     */
+    email: '<a href="mailto:info@saimi.ch" class="text-primary underline">info@saimi.ch</a>',
   },
 
   /* ── Sponsors ──────────────────────────────────────────────────────────── */
